@@ -1,4 +1,5 @@
 ﻿using LoLGoal.Controller;
+using LoLGoal.View;
 using LoLGoal.View.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,9 @@ namespace LoLGoal
 
             if(controller.GetSummoner(viewModel.Region, viewModel.SummonerName))
             {
-                MessageBox.Show("OK");
+                WindowProfile profile = new WindowProfile();
+                profile.Show();
+                this.Close();
             }
             else
             {

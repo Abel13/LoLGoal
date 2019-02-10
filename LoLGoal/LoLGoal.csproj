@@ -64,6 +64,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="View\ViewModel\ViewModelMain.cs" />
+    <Compile Include="View\WindowProfile.xaml.cs">
+      <DependentUpon>WindowProfile.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\WindowProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -115,6 +122,17 @@
     <None Include="API\Key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\emblems\Emblem_Bronze.png" />
+    <Resource Include="Assets\emblems\Emblem_Challenger.png" />
+    <Resource Include="Assets\emblems\Emblem_Diamond.png" />
+    <Resource Include="Assets\emblems\Emblem_Gold.png" />
+    <Resource Include="Assets\emblems\Emblem_Grandmaster.png" />
+    <Resource Include="Assets\emblems\Emblem_Iron.png" />
+    <Resource Include="Assets\emblems\Emblem_Master.png" />
+    <Resource Include="Assets\emblems\Emblem_Platinum.png" />
+    <Resource Include="Assets\emblems\Emblem_Silver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
