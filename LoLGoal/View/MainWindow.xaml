@@ -11,7 +11,7 @@
             <Image Source="/Assets/logo2.png" Width="96" Height="96"/>
             <Border Background="White" Margin="10 20" CornerRadius="5">
                 <StackPanel Margin="25">
-                    <ComboBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region">
+                    <ComboBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Region" Text="{Binding Region}">
                         <ComboBoxItem Content="RU"/>
                         <ComboBoxItem Content="KR"/>
                         <ComboBoxItem Content="BR1"/>
@@ -24,10 +24,10 @@
                         <ComboBoxItem Content="LA1"/>
                         <ComboBoxItem Content="LA2"/>
                     </ComboBox>
-                    <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Summoner"/>
+                    <TextBox Text="{Binding SummonerName}" Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Summoner"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Margin="15 50" Content="CANCEL"/>
-                        <Button Margin="15 50" Content="SIGN UP"/>
+                        <Button x:Name="ButtonSignUp" Margin="15 50" Content="SIGN UP" Click="ButtonSignUp_Click"/>
                     </StackPanel>
                 </StackPanel>
             </Border>

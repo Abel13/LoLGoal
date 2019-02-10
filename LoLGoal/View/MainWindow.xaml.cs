@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LoLGoal.Controller;
+using LoLGoal.View.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,32 @@ namespace LoLGoal
     /// </summary>
     public partial class MainWindow : Window
     {
+        ControllerMain controller;
+        ViewModelMain viewModel;
         public MainWindow()
         {
+            controller = new ControllerMain();
+            viewModel = new ViewModelMain();
             InitializeComponent();
+
+            this.DataContext = viewModel;
+        }
+
+        private void ButtonSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(viewModel.Region))
+                return;
+            if (string.IsNullOrEmpty(viewModel.SummonerName))
+                return;
+
+            if(controller.GetSummoner(viewModel.Region, viewModel.SummonerName))
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show("Not Found");
+            }
         }
     }
 }
