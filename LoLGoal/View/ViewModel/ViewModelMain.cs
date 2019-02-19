@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoLGoal.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace LoLGoal.View.ViewModel
         public string Region
         {
             get { return region; }
-            set { region = value; NotifyPropertyChanged("Region"); }
+            set { region = value; Constants.Region = value; NotifyPropertyChanged("Region"); }
         }
 
         string summonerName;

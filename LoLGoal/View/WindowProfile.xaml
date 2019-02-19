@@ -13,26 +13,26 @@
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
                 <Border Width="100" Height="100" Margin="20 20 0 10" BorderBrush="Gray" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="15">
                     <Border.Background>
-                        <ImageBrush ImageSource="/LoLGoal;component/Assets/logo2.png"/>
+                        <ImageBrush ImageSource="{Binding Path=Icon}"/>
                     </Border.Background>
                 </Border>
-                <TextBlock Margin="20 15" FontSize="30" Text="Summoner Name" Foreground="DarkGray"/>
+                <TextBlock Margin="20 15" FontSize="30" Text="{Binding Path=SummonerName}" Foreground="DarkGray"/>
                 <StackPanel Orientation="Horizontal" Margin="20 0">
                     <StackPanel Margin="5">
                         <TextBlock Text="WINS" FontSize="15" FontWeight="Bold" Foreground="Green"/>
-                        <TextBlock Text="18" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <TextBlock Text="LOSSES" FontSize="15" FontWeight="Bold" Foreground="DarkRed"/>
-                        <TextBlock Text="5" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="30 20">
                     <TextBlock Text="LEVEL" FontSize="15" Foreground="LightGray"/>
-                    <TextBlock Text="170" HorizontalAlignment="Center" FontSize="80" Foreground="Gray"/>
+                    <TextBlock Text="{Binding Path=Level}" HorizontalAlignment="Center" FontSize="80" Foreground="Gray"/>
                 </StackPanel>
                 <Grid Margin="20 10">
-                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFlatButton}" Width="100">
+                    <Button x:Name="ButtonSearch" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFlatButton}" Width="100" Click="ButtonSearch_Click">
                         <materialDesign:PackIcon Kind="Search" Width="24" Height="24"/>
                     </Button>
                     <Button HorizontalAlignment="Right" Width="100" Content="LOGIN"/>
@@ -40,14 +40,14 @@
             </StackPanel>
         </Border>
         <StackPanel HorizontalAlignment="Right" Margin="30 10">
-            <Image Source="/LoLGoal;component/Assets/emblems/Emblem_Challenger.png" Width="200" Height="200">
+            <Image Source="{Binding Path=Emblem}" Width="200" Height="200">
                 <Image.Effect>
                     <DropShadowEffect BlurRadius="40" ShadowDepth="1"/>
                 </Image.Effect>
             </Image>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <TextBlock FontSize="18" Foreground="Gray" Text="IRON" Margin="5" VerticalAlignment="Center"/>
-                <TextBlock FontSize="20" Foreground="Gray" Text="IV" Margin="5"/>
+                <TextBlock FontSize="18" Foreground="Gray" Text="{Binding Path=Tier}" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock FontSize="20" Foreground="Gray" Text="{Binding Path=Rank}" Margin="5"/>
             </StackPanel>
         </StackPanel>
     </Grid>

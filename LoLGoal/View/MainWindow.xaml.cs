@@ -41,7 +41,7 @@ namespace LoLGoal
             if (string.IsNullOrEmpty(viewModel.SummonerName))
                 return;
 
-            if(controller.GetSummoner(viewModel.Region, viewModel.SummonerName))
+            if(controller.GetSummoner(viewModel.SummonerName))
             {
                 WindowProfile profile = new WindowProfile();
                 profile.Show();

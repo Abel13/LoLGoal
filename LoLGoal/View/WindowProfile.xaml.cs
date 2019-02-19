@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoLGoal.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,19 @@ namespace LoLGoal.View
     /// </summary>
     public partial class WindowProfile : Window
     {
+        ControllerProfile controller;
+
         public WindowProfile()
         {
+            controller = new ControllerProfile();
             InitializeComponent();
+            this.DataContext = controller.GetContext();
+        }
+
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            controller.OpenMain();
+            this.Close();
         }
     }
 }

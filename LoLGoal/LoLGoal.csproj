@@ -63,7 +63,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\League_V4.cs" />
+    <Compile Include="Controller\ControllerProfile.cs" />
+    <Compile Include="Model\PositionDTO.cs" />
+    <Compile Include="Utils\Constants.cs" />
     <Compile Include="View\ViewModel\ViewModelMain.cs" />
+    <Compile Include="View\ViewModel\ViewModelProfile.cs" />
     <Compile Include="View\WindowProfile.xaml.cs">
       <DependentUpon>WindowProfile.xaml</DependentUpon>
     </Compile>
